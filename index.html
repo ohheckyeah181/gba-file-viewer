@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GBA Game Viewer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="toolbar">
+        <div class="brand">
+          <h1>GBA Viewer</h1>
+        </div>
+
+        <div class="toolbar-spacer"></div>
+
+        <div class="control-group" id="controlGroup" style="display: none;">
+          <button id="saveStateBtn" class="toolbar-btn" type="button">
+            <span>💾</span>
+            Save State
+          </button>
+          <button id="loadStateBtn" class="toolbar-btn" type="button">
+            <span>📂</span>
+            Load State
+          </button>
+          <button id="downloadSaveBtn" class="toolbar-btn" type="button">
+            <span>⬇️</span>
+            Download Save
+          </button>
+          <button id="fullscreenBtn" class="toolbar-btn" type="button">
+            <span>⛶</span>
+            Fullscreen
+          </button>
+        </div>
+
+        <label class="upload-button" for="romInput">
+          <span>Open ROM</span>
+          <input id="romInput" type="file" accept=".gba,.bin,.rom" />
+        </label>
+      </header>
+
+      <main class="workspace">
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Game</h2>
+            <div id="stateIndicator" class="state-indicator"></div>
+          </div>
+          <div id="dropZone" class="drop-zone">
+            <div id="emulator" class="emulator-stage"></div>
+          </div>
+        </section>
+      </main>
+
+      <div id="notification" class="notification"></div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
